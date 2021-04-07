@@ -20,7 +20,9 @@ create table timings
     track uuid ,
     work_id int
 );
-insert into users (name,last_name,email,work_id) VALUES ('andre','Andrey','andrey@mail.com','1');
+insert into users (name,last_name,email,work_id) 
+VALUES ('andre','Andrey','andrey@mail.com','1'),
+       ('Max','Maximov','max@mail.ru','1');
 
 select * from users;
 
@@ -31,3 +33,11 @@ select * from works;
 insert into timings (code) values ('hello,world');
 
 select * from timings;
+
+alter table timings add user_id int;
+
+select * from users  where id = 2;
+
+update users set name = 'Alex' where name = 'andre';
+
+delete from users where id = 1;
